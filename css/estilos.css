@@ -1,0 +1,192 @@
+/* RESET UNIVERSAL [cite: 367, 368] */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES DE DISEÑO [cite: 255] */
+:root {
+    --bg-color: #6e52ec;
+    --accent-color: #00ffc3;
+    --text-color: #ffffff;
+    --font-main: "Times New Roman", Times, serif;
+}
+
+/* LAYOUT GLOBAL CON GRID [cite: 504] */
+.grid-layout {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    background-color: var(--bg-color);
+    font-family: var(--font-main);
+    color: var(--text-color);
+    font-style: italic;
+}
+.contenido-main {
+    width: 100%;             /* Contenido [cite: 389] */
+    padding: 40px;           /* Espacio interno (borde-contenido) [cite: 394, 397] */
+    border: 2px solid white; /* Línea del borde [cite: 399, 401] */
+    margin: 20px auto;       /* Espacio externo (separa cajas) [cite: 402, 405] */
+    box-sizing: border-box;  /* El padding no aumenta el ancho total  */
+}
+
+/* COMPONENTE HEADER CON FLEXBOX [cite: 471, 473] */
+.header-principal {
+    grid-area: header;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around; /* Distribución uniforme [cite: 486] */
+    align-items: center; /* Alineación vertical [cite: 493] */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Espaciado entre links [cite: 502] */
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+.navbar {
+    display: flex;             /* Activa el contenedor flexible [cite: 472] */
+    justify-content: space-between; /* Empuja los ítems a los extremos  */
+    align-items: center;        /* Los centra verticalmente entre sí [cite: 492] */
+    width: 100%;               /* Asegura que use todo el ancho de la pantalla */
+}
+.nav-links {
+    display: flex;            /* Activa Flexbox [cite: 472, 473] */
+    justify-content: center;  /* Centra horizontalmente [cite: 488, 489] */
+    align-items: center;      /* Centra verticalmente [cite: 492, 493] */
+    gap: 2rem;                /* Espacio uniforme entre botones [cite: 502, 503] */
+}
+
+
+
+h1 {
+    text-align: center; /* Alinea el texto al centro de su contenedor  */
+}
+.header-principal {
+    display: flex;            /* Activa el contenedor flexible [cite: 472] */
+    justify-content: center;   /* Centra el contenido en el eje principal (horizontal)  */
+}
+.caja-texto {
+    padding: 2rem; /* Espacio de 2rem hacia adentro de la caja [cite: 397] */
+}
+.parrafo {
+    margin: 1rem; /* Crea 1rem de distancia alrededor del borde [cite: 405, 406] */
+}
+.menu-navegacion {
+    display: flex; 
+    gap: 1rem; /* Espacio uniforme de 1rem entre cada enlace del menú  */
+}
+body {
+    line-height: 1.6; /* Establece una altura de línea cómoda para la lectura  */
+}
+
+.lista-contacto { 
+    list-style: none; /* Quita los puntos  */
+    padding: 0;       /* Elimina el espacio que dejaban los puntos [cite: 394, 417] */
+}
+.lista-contacto {
+    text-align: center; /* Centra cada renglón de la lista  */
+    padding: 2rem;
+}
+
+/* BOX MODEL Y CONTENIDO [cite: 385, 388] */
+.contenido-main {
+    grid-area: main;
+    max-width: 800px;
+    margin: 40px auto; /* Centrado con márgenes [cite: 403, 411] */
+    padding: 20px; /* Espacio interno [cite: 394] */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px; /* Bordes redondeados [cite: 399] */
+}
+
+.img-hero, .imagen1, .imagen2 {
+    display: block; /* Comportamiento de bloque [cite: 438, 442] */
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+}
+.grid-layout {
+    display: grid;            /* Activa Grid */
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";             /* Mapa visual de la página */
+    grid-template-rows: auto 1fr auto; /* El contenido crece, header/footer fijos */
+    min-height: 100vh;
+}
+
+/* POSICIONAMIENTO Y BOTONES [cite: 520, 521] */
+
+.boton-volver {
+
+    display: inline-block; /* Comportamiento híbrido [cite: 452, 462] */
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.main-content {
+    display: flex;           /* Activa Flexbox [cite: 472] */
+    flex-direction: column;  /* Apila los elementos en vertical [cite: 478] */
+    align-items: center;     /* Centra los hijos horizontalmente [cite: 491, 492] */
+}
+.boton-volver {
+    display: block;    /* Cambia a bloque para que acepte márgenes [cite: 438, 440] */
+    margin: 40px auto; /* 40px arriba/abajo y centrado automático a los lados [cite: 419, 422] */
+    width: fit-content;/* Ajusta el ancho solo al tamaño del texto */
+}
+.footer-sitio {
+    grid-area: footer;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/* Agrega esto a tu archivo estilos.css */
+.botones-redes {
+    display: flex;             /* Activa Flexbox [cite: 472] */
+    justify-content: center;   /* Centra los botones horizontalmente [cite: 485] */
+    gap: 15px;                 /* Espacio uniforme entre ítems  */
+    margin: 30px 0;            /* Espacio externo arriba y abajo [cite: 402] */
+    flex-wrap: wrap;           /* Permite que bajen de línea en móviles [cite: 481] */
+}
+
+.botones-redes .btn {
+    padding: 10px 25px;        /* Espacio interno del botón [cite: 394] */
+    font-style: normal;        /* Quita el italic heredado del body [cite: 275] */
+    transition: transform 0.3s; /* Animación suave [cite: 75] */
+}
+
+.botones-redes .btn:hover {
+    transform: scale(1.1);     /* Efecto de agrandado al pasar el mouse */
+}
+
+/* RESPONSIVE DESIGN [cite: 504] */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Apilado vertical en móvil [cite: 478] */
+        gap: 15px;
+    }
+}

@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-
 :root {
     --bg-color: #6e52ec;
     --accent-color: #00ffc3;
@@ -26,33 +25,37 @@
     font-family: var(--font-main);
     color: var(--text-color);
     font-style: italic;
-}
-.contenido-main {
-    width: 100%;             
-    padding: 40px;           
-    border: 2px solid white; 
-    margin: 20px auto;     
-    box-sizing: border-box;  
+    line-height: 1.6;
 }
 
 
 .header-principal {
     grid-area: header;
     background-color: rgba(0, 0, 0, 0.2);
-    padding: 1rem 0;
+    padding: 1rem;
 }
+
 .navbar {
     display: flex;
-    justify-content: space-around; 
-    align-items: center; 
-    max-width: 1000px;
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px;
+    max-width: 1100px;
     margin: 0 auto;
 }
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px; 
+    gap: 20px;
+    padding: 0;
 }
+
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -63,100 +66,35 @@
 .nav-links a:hover {
     color: var(--accent-color);
 }
-.navbar {
-    display: flex;             
-    justify-content: space-between; 
-    align-items: center;        
-    width: 100%;
-.nav-links {
-    display: flex;            
-    justify-content: center;  
-    align-items: center;      
-    gap: 2rem;                
-}
-
-
-
-h1 {
-    text-align: center; 
-}
-.header-principal {
-    display: flex;            
-    justify-content: center;   
-}
-.caja-texto {
-    padding: 2rem;
-}
-.parrafo {
-    margin: 1rem; 
-}
-.menu-navegacion {
-    display: flex; 
-    gap: 1rem; 
-}
-body {
-    line-height: 1.6; 
-}
-
-.lista-contacto { 
-    list-style: none; 
-    padding: 0;       
-}
-.lista-contacto {
-    text-align: center; 
-    padding: 2rem;
-}
 
 
 .contenido-main {
     grid-area: main;
-    max-width: 800px;
-    margin: 40px auto; 
-    padding: 20px; 
+    width: 90%; 
+    max-width: 900px; 
+    margin: 20px auto;
+    padding: 20px;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 15px; 
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.img-hero, .imagen1, .imagen2 {
+.img-hero {
     display: block;
     margin: 20px auto;
-    width: 100%;
-    max-width: 500px;
+    width: 100%; 
+    max-width: 600px;
+    height: auto;
     border-radius: 15px;
-}
-.grid-layout {
-    display: grid;           
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer";             
-    grid-template-rows: auto 1fr auto; 
-    min-height: 100vh;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 
+.botones-sociales {
+    margin-top: 20px;
+}
 
-.boton-volver {
 
-    display: inline-block; 
-    padding: 10px 20px;
-    background-color: var(--accent-color);
-    color: black;
-    text-decoration: none;
-    border-radius: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-.main-content {
-    display: flex;          
-    flex-direction: column;  
-    align-items: center;     
-}
-.boton-volver {
-    display: block;   
-    margin: 40px auto; 
-    width: fit-content;
-}
 .footer-sitio {
     grid-area: footer;
     text-align: center;
@@ -164,28 +102,24 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.botones-redes {
-    display: flex;            
-    justify-content: center;  
-    gap: 15px;                 
-    margin: 30px 0;            
-    flex-wrap: wrap;           
-}
-
-.botones-redes .btn {
-    padding: 10px 25px;       
-    font-style: normal;      
-    transition: transform 0.3s; 
-}
-
-.botones-redes .btn:hover {
-    transform: scale(1.1);     
-}
-
-
-@media (max-width: 600px) {
+@media (min-width: 768px) {
     .navbar {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+    
+    .contenido-main {
+        padding: 40px; 
+    }
+}
+
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3rem; 
+    }
+    
+    .contenido-main {
+        margin: 40px auto;
     }
 }

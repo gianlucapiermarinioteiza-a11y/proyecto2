@@ -139,6 +139,26 @@
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+ul, li {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+
+body, .grid-layout, .contenido-main, section {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.btn-volver {
+    display: block !important;
+    width: fit-content !important;
+}
+
 
 @media (min-width: 768px) {
     .navbar {
